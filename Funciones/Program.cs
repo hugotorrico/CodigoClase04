@@ -32,6 +32,21 @@ double CalcularDistancia(double x1, double y1,  double x2, double y2)
     return Math.Round( resultado,2);
 }
 
+double CalcularAreRectanguloCoordenadas(
+    double x1, double y1, double x2, double y2,
+    double x3, double y3, double x4, double y
+    )
+{
+    double resultado = 0;
+    double baseR, alturaR;
+
+    baseR = CalcularDistancia(x1, y1, x2, y2);
+    alturaR = CalcularDistancia(x2, y2, x3, y3);
+    resultado = CalcularAreaRectangulo(baseR, alturaR);
+
+    return resultado;
+
+}
 
 
 int base1, altura1;
@@ -59,7 +74,6 @@ Console.WriteLine(area2);
 //Console.WriteLine(distancia);
 
 double x1, y1, x2, y2, x3, y3, x4, y4;
-double baseR, alturaR;
 double AreaR;
 x1 = 1;
 y1 = 1;
@@ -70,15 +84,10 @@ y3 = 3;
 x4 = 1;
 y4 = 3;
 
-baseR = CalcularDistancia(x1, y1, x2, y2);
-alturaR = CalcularDistancia(x2, y2, x3, y3);
-AreaR = CalcularAreaRectangulo(baseR , alturaR);
-
+AreaR = CalcularAreRectanguloCoordenadas(x1, y1, x2, y2, x3, y3, x4, y4);
 Console.WriteLine("El area del rectangulo de coordenas es:");
 Console.WriteLine(AreaR);
 
-
-Console.WriteLine("Hello, World!");
 
 
 
